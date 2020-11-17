@@ -10,19 +10,21 @@ const EstoquetotalController = require('./controllers/EstoquetotalController');
 
 const UsuariosController = require('./controllers/UsuariosController');
 
-//const UsuFornController = require('./controllers/UsuFornController');
-
-
 const VendestgeralController = require('./controllers/VendestgeralController');
 
 const MovlogdiaController = require('./controllers/MovlogdiaController');
 
 const MovlogdiadfController = require('./controllers/MovlogdiadfController');
 
+const InsertFor251Controller = require('./controllers/InsertFor251Controller');
+
+const SelectvinculoFor251Controller = require('./controllers/SelectvinculoFor251Controller');
+
+const SelectcodigoFor251Controller = require('./controllers/SelectcodigoFor251Controller');
+
+const SelectrevistaFor251Controller = require('./controllers/SelectrevistaFor251Controller');
+
 const routes = express.Router();
-
-
-
 
 routes.get('/Vendas/:for_cod/:data/:data2',VendaController.index);
 
@@ -40,8 +42,13 @@ routes.get('/movlogdia',MovlogdiaController.listAllProducts);
 
 routes.get('/movlogdiadf',MovlogdiadfController.listAllProducts);
 
+routes.post('/insert/:codigo/:nome/:prinome/:comissao/:seguimento/:seguimentogestao/:revistaparalelo/:ativo/:revista/:acrescimo/:cpfcnpj/:vinculo/:grupo',InsertFor251Controller.createProduct);
 
+routes.get('/selectvinculo/:vinculo/',SelectvinculoFor251Controller.listAllProducts);
 
+routes.get('/selectcodigo/:codigo/',SelectcodigoFor251Controller.listAllProducts);
+
+routes.get('/selectrevista/',SelectrevistaFor251Controller.listAllProducts);
 
 
 module.exports = routes;

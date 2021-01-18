@@ -9,8 +9,12 @@ const Op = sequelize.Op;
 
 module.exports = {
   async index(req, res) {
-    const { usu_login } = req.params;
-    const { usu_senha } = req.params;
+
+
+    const usu_login = req.params.usu_login;
+    const usu_senha = req.params.usu_senha;
+
+    const ausu_login = usu_login.toUpperCase() 
 
  
 
@@ -25,7 +29,7 @@ module.exports = {
             
             }],
 
-            where:[{usu_login, usu_senha: md5(usu_senha)}] 
+            where:[{usu_login: ausu_login, usu_senha: md5(usu_senha)}] 
 
       
     });

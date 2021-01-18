@@ -19,6 +19,8 @@ var anome = "'"+nome.toString()+"'";
 var aprinome = "'"+prinome.toString()+"'";
 var acpfcnpj = "'"+cpfcnpj.toString()+"'";
 
+//console.log(acpfcnpj, cpfcnpj);
+
 
 
  const rows = await db251.query('INSERT INTO erp_fabricantes(fabricantes_id, fabricantes_nome,fabricantes_nomfant,fabricantes_comissao, fabricantes_segmento_id,fabricantes_segmento_id_gestao,fabricantes_revista,for_ativo,fabricantes_revistas_id,fabricantes_bonus) VALUES ('+codigo+','+anome+','+aprinome+','+comissao+','+seguimento+','+seguimentogestao+','+revistaparalelo+','+ativo+','+revista+','+acrescimo+')');

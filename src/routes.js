@@ -33,6 +33,7 @@ const VendestgeralitemtamController = require('./controllers/Vendestgeralitemtam
 const Aculoja = require('./controllers/Aculoja');
 
 
+
 const VendestgeralitemlojaController = require('./controllers/VendestgeralitemlojaController');
 
 const ultimaatualizacao = require('./controllers/ultimaatualizacao');
@@ -52,6 +53,8 @@ const usuarios = require('./controllers/usuarios');
 const combocodigo = require('./controllers/combocodigo');
 
 const comboloja = require('./controllers/comboloja');
+
+const consultaconso = require('./controllers/consultaconso');
 
 const routes = express.Router();
 
@@ -107,7 +110,6 @@ routes.get('/combocodigo/:for_cod',combocodigo.listAllProducts);
 
 routes.get('/comboloja',comboloja.listAllProducts);
 
-
-
+routes.get('/consultaconso/:dataini/:datafim/:codigofab',consultaconso.listAllProducts);
 
 module.exports = routes;

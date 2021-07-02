@@ -1,4 +1,5 @@
 const db251 = require("../config/database251");
+const db100110 = require("../config/database3");
 
 exports.createProduct  = async (req, res) => {
  const codigo = req.params.codigo;
@@ -28,7 +29,7 @@ var acpfcnpj = "'"+cpfcnpj.toString()+"'";
  const rows3 = await db251.query('INSERT INTO erp_fabricante_grupo(fg_grupo_id, fg_fabricantes_id) VALUES ('+grupo+','+codigo+')');  
  
  
- 
+ const rows4 = await db251.query('INSERT INTO fabricas(codigofab, codigoalt, nomefabric, desconto, acrescimo, podepedido, podeentrad, podetrfent, podetrfsai, podedevfab, podedevcli, podetroca, mostranome, mensagem, prazotroca) VALUES ('+codigo+','+codigo+','+anome+',0.00, 0.00, S, S, S, S, S, S, S, S, S, 31)');
  
  
  

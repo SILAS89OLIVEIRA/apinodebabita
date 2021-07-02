@@ -56,6 +56,48 @@ const comboloja = require('./controllers/comboloja');
 
 const consultaconso = require('./controllers/consultaconso');
 
+const totitemdff = require('./controllers/totitemdff');
+
+const totitement = require('./controllers/totitement');
+
+const totitempe = require('./controllers/totitempe');
+
+const totitemtr = require('./controllers/totitemtr');
+
+const totitementdcdt = require('./controllers/totitementdcdt');
+
+const totitempedcdt = require('./controllers/totitempedcdt');
+
+const totitemdffdcdt = require('./controllers/totitemdffdcdt');
+
+const totitemtrdcdt = require('./controllers/totitemtrdcdt');
+
+const totitementcod = require('./controllers/totitementcod');
+
+const totitempecod = require('./controllers/totitempecod');
+
+const totitemdffcod = require('./controllers/totitemdffcod');
+
+const totitemtrcod = require('./controllers/totitemtrcod')
+
+const totitementdoc = require('./controllers/totitementdoc');
+
+const totitempedoc = require('./controllers/totitempedoc')
+
+const totitemdffdoc = require('./controllers/totitemdffdoc');
+
+const totitemtrdoc = require('./controllers/totitemtrdoc');
+
+const checkpro = require('./controllers/checkpro');
+
+const InsertRevFor251Controller = require('./controllers/InsertRevFor251Controller');
+
+const SelectRevFor251Controller = require('./controllers/SelectRevFor251Controller');
+
+const SelectGrupFor251Controller = require('./controllers/SelectGrupFor251Controller');
+
+const SelectGrupVinFor251Controller = require('./controllers/SelectGrupVinFor251Controller');
+
 const routes = express.Router();
 
 routes.get('/Vendas/:for_cod/:data/:data2',VendaController.index);
@@ -111,5 +153,48 @@ routes.get('/combocodigo/:for_cod',combocodigo.listAllProducts);
 routes.get('/comboloja',comboloja.listAllProducts);
 
 routes.get('/consultaconso/:dataini/:datafim/:codigofab',consultaconso.listAllProducts);
+
+routes.get('/totitemdff/:dataini/:datafim/:codigofab',totitemdff.listAllProducts);
+
+routes.get('/totitement/:dataini/:datafim/:codigofab',totitement.listAllProducts);
+
+routes.get('/totitempe/:dataini/:datafim/:codigofab',totitempe.listAllProducts);
+
+routes.get('/totitemtr/:dataini/:datafim/:codigofab',totitemtr.listAllProducts);
+
+routes.get('/totitementdcdt/:dataini/:datafim/:codigofab',totitementdcdt.listAllProducts);
+
+routes.get('/totitempedcdt/:dataini/:datafim/:codigofab',totitempedcdt.listAllProducts);
+
+routes.get('/totitemdffdcdt/:dataini/:datafim/:codigofab',totitemdffdcdt.listAllProducts);
+
+routes.get('/totitemtrdcdt/:dataini/:datafim/:codigofab',totitemtrdcdt.listAllProducts);
+
+routes.get('/totitementcod/:dataini/:datafim/:codigofab',totitementcod.listAllProducts);
+
+routes.get('/totitempecod/:dataini/:datafim/:codigofab',totitempecod.listAllProducts);
+
+routes.get('/totitemdffcod/:dataini/:datafim/:codigofab',totitemdffcod.listAllProducts);
+
+routes.get('/totitemtrcod/:dataini/:datafim/:codigofab',totitemtrcod.listAllProducts);
+
+routes.get('/totitementdoc/:dataini/:datafim/:documento',totitementdoc.listAllProducts);
+
+routes.get('/totitempedoc/:dataini/:datafim/:documento',totitempedoc.listAllProducts);
+
+routes.get('/totitemdffdoc/:dataini/:datafim/:documento',totitemdffdoc.listAllProducts);
+
+routes.get('/totitemtrdoc/:dataini/:datafim/:documento',totitemtrdoc.listAllProducts);
+
+routes.get('/checkpro/:codigofab',checkpro.listAllProducts);
+
+routes.post('/InsertRevFor251/:revistas_id/:revistas_nome/:revistas_lancamento/:revistas_ivendas/:revistas_prelanc',InsertRevFor251Controller.createProduct);
+
+routes.get('/SelectRevFor251',SelectRevFor251Controller.listAllProducts);
+
+routes.get('/SelectGrupFor251Controller',SelectGrupFor251Controller.listAllProducts);
+
+routes.get('/SelectGrupVinFor251Controller',SelectGrupVinFor251Controller.listAllProducts);
+
 
 module.exports = routes;

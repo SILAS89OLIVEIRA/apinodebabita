@@ -98,6 +98,20 @@ const SelectGrupFor251Controller = require('./controllers/SelectGrupFor251Contro
 
 const SelectGrupVinFor251Controller = require('./controllers/SelectGrupVinFor251Controller');
 
+const consultadfmovimentacoes = require('./controllers/consultadfmovimentacoes');
+
+const consultaentmovimentacoes = require('./controllers/consultaentmovimentacoes');
+
+const insertdfmovimentacoes = require('./controllers/insertdfmovimentacoes');
+
+const insertentmovimentacoes = require('./controllers/insertentmovimentacoes');
+
+const insertdfitensmovimentacoes = require('./controllers/insertdfitensmovimentacoes');
+
+const insertentitensmovimentacoes = require('./controllers/insertentitensmovimentacoes');
+
+
+
 const routes = express.Router();
 
 routes.get('/Vendas/:for_cod/:data/:data2',VendaController.index);
@@ -195,6 +209,18 @@ routes.get('/SelectRevFor251',SelectRevFor251Controller.listAllProducts);
 routes.get('/SelectGrupFor251Controller',SelectGrupFor251Controller.listAllProducts);
 
 routes.get('/SelectGrupVinFor251Controller',SelectGrupVinFor251Controller.listAllProducts);
+
+routes.get('/consultadfmovimentacoes/:documento/:data', consultadfmovimentacoes.listAllProducts);
+
+routes.get('/consultaentmovimentacoes/:documento/:data', consultaentmovimentacoes.listAllProducts);
+
+routes.post('/insertdfmovimentacoes/:documento/:data/:hora/:vendedor/:tipo/:origem/:cancelado/:bloqueado/:itens/:alteracoes/:operador/:descontos/:total/', insertdfmovimentacoes.createProduct);
+
+routes.post('insertentmovimetacoes/:documento/:data/:hora/:vendedor/:tipo/:origem/:cancelado/:bloqueado/:itens/:alteracoes/:operador/:descontos/:total/', insertentmovimentacoes.createProduct);
+
+routes.post('insertdfitensmovimentacoes/::documento/:data/:hora/:vendedor/:tipo/:origem/:cancelado/:bloqueado/:itens/:alteracoes/:operador/:descontos/:total/', insertdfitensmovimentacoes.createProduct);
+
+routes.post('insertentitensmovimentacoes/:documento/:data/:hora/:vendedor/:tipo/:origem/:cancelado/:bloqueado/:itens/:alteracoes/:operador/:descontos/:total/', insertentitensmovimentacoes.createProduct);
 
 
 module.exports = routes;
